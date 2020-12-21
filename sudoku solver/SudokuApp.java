@@ -38,16 +38,14 @@ public class SudokuApp {
         }
 
    }
-    // Game methods
+
     private void initializeGame() {
         Scanner numbersScanner;
         int numRows = 9;
         int numCols = 9;
         gameBoard = new int[numRows][numCols];
         try {
-            // Make a file object for SudokuNumbers.txt
             File numbers = new File("SudokuNumbers.txt");
-            // Initialize numbersScanner
             numbersScanner = new Scanner(numbers);
             // Place numbers from the file into the global 2D gameBoard array
             for (int row = 0; row < gameBoard.length; row++) { // Total number of rows
@@ -82,10 +80,9 @@ public class SudokuApp {
                 }
             }
         }
-        // If there are no 0's return true
+        // No zeros
         return true;
     }
-    
     
     private int[] getNextCell() {
         for (int row = 0; row < 9; row++) {
